@@ -1,0 +1,20 @@
+.explore {
+  padding-top: 100px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width:768px) {
+    padding-top: 80px;
+    
+  }
+
+  .exploreContainer {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+
+    
+  }
+}

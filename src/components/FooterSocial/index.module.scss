@@ -1,0 +1,12 @@
+.socialLinks{
+    display: flex;
+    width: 100%;
+    align-items:center;
+
+    a{
+        margin-right: 24px;
+        &:last-child{
+            margin-right: 0px;
+        }
+    }
+}

@@ -1,0 +1,103 @@
+// index.module.scss
+.customSwiperContainer {
+  width: 100%;
+  overflow: hidden;
+
+  .sliderContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    min-width: 100%;
+    transition: transform 0.5s ease;
+    @media (max-width: 600px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .sliderItem {
+      margin-right: 20px;
+      min-width: 300px;
+      border-radius: 26px 26px 0px 0px;
+      background: linear-gradient(
+        0deg,
+        rgba(255, 119, 87, 0.1) 0%,
+        rgba(109, 72, 64, 0.1) 100%
+      );
+      border-radius: 26px 26px 26px 26px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    @media (max-width: 860px) {
+    }
+  }
+
+  .buttonContainer {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    justify-content: flex-end;
+
+    @media (max-width: 860px) {
+      justify-content: flex-end;
+    }
+  }
+
+  .sliderContent {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 24px 40px 24px;
+    box-sizing: border-box;
+
+    title {
+      color: #767e86;
+      font-family: Mulish;
+      font-size: 28px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+    .stars {
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      color: #566678;
+      font-family: Rubik;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      margin-bottom: 15px;
+    }
+
+    .priceDetails {
+      display: flex;
+      justify-content: space-around;
+      align-items:center;
+    
+      span {
+        color: #767e86;
+        font-family: Rubik;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-right: 5px;
+      }
+      p {
+        color: #ff7757;
+        font-family: Rubik;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-right: 30px;
+      }
+    }
+  }
+}

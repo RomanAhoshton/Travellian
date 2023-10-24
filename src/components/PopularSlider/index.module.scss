@@ -1,0 +1,42 @@
+// index.module.scss
+.customSwiperContainer {
+  width: 100%;
+  overflow: hidden;
+  
+  
+
+  .sliderContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    min-width: 100%;
+    transition: transform 0.5s ease;
+   
+    
+
+    .sliderItem {
+      margin-right: 20px;
+      min-width: 300px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    @media (max-width: 860px) {
+    
+    }
+  }
+
+  .buttonContainer {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    justify-content: flex-end;
+
+    @media (max-width: 860px) {
+      justify-content: flex-end;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.mainImage {
+  background-image: url("https://s3-alpha-sig.figma.com/img/ac7b/4316/55447d05c75fa3f3de352e02b80a7bbf?Expires=1698624000&Signature=MlwE9usjKW9uX5AoAJTyKUTvK1pBc30jcXSWDRkvZSMhCoemmzUDapFP8q3DrNRqxi0DWzG-nkgI9ynA7pd~q6fTkady4zULwSqvGlfJewmt~VoMkRdpl5WftR2so9IE0O52PDaKNbOOGDcjI333jD0bmXgaLwQFH1ZF5Ket9kw56EtHUm68ozRi9KRf0KPc-EXppC~DbSMp4TCXO1eHWBQkGRtWwcH-k-Rwt76aZha8Ptn2lh8e4K9JE3RLrIQETWWOOgodgTDz-MHPJQWIBR89X0RY7~7e7ARSnVr1GpH3qt3jhYZmdoI5YunKyYSrgeskksx9hCakRe7vVxYFhQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"); /* Replace with the actual path to your image */
+  background-size: cover;
+  background-position: bottom;
+  display: flex;
+  align-items:flex-start;
+  max-height: 100%;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}

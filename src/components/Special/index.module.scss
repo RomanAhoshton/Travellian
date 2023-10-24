@@ -1,0 +1,21 @@
+.specialContainer {
+  padding-top: 50px;
+  @media (max-width:768px){
+    padding-top: 100px;
+  }
+  .titleWrapper {
+    margin-bottom: 20px;
+    text-align: end;
+  }
+
+  .subTitleWrapper {
+    margin-top: 32px;
+    text-align: end;
+  }
+
+  .decorWrapper {
+    display: flex;
+    justify-content: flex-end;
+
+  }
+}

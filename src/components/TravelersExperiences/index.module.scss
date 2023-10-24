@@ -1,0 +1,17 @@
+.experiencesContainer {
+   padding-top: 100px;
+  padding-bottom: 100px;
+  @media (max-width: 768px) {
+    padding-top: 50px;
+  }
+
+  .titleWrapper {
+    margin-bottom: 20px;
+
+  }
+
+  .subTitleWrapper {
+    margin-top: 32px;
+ 
+  }
+}
