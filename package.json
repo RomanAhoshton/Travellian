@@ -53,6 +53,7 @@
   "devDependencies": {
     "@types/react-scroll": "^1.8.9",
     "@types/react-slick": "^0.23.10",
-    "@types/slick-carousel": "^1.6.38"
+    "@types/slick-carousel": "^1.6.38",
+    "gh-pages": "^6.0.0"
   }
 }
