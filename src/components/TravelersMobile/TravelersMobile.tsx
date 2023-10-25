@@ -6,7 +6,6 @@ import { useMobileSlider } from '../../hooks/useMobileSlider';
 import { travelsExperiences } from '../../constants/constants';
 import Prev from '../Prev';
 import Next from '../Next';
-import OrangeButton from '../OrangeButton';
 import Star from '../../icons/Star';
 
 
