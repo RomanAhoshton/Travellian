@@ -1,13 +1,10 @@
 .travel {
-    padding-top: 100px;
+  
     max-width: 100%;
     display: flex;
     flex-direction: column;
   
-    @media (max-width:768px) {
-      padding-top: 50px;
-      
-    }
+   
   
     .travelContainer {
       max-width: 1440px;

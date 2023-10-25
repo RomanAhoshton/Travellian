@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <header
       className={`${
-        scroll > 50 && !toggleMenu ? styles.scrollHeader : styles.header
+        scroll > 50  ? styles.scrollHeader : styles.header
       }`}
     >
       <div className={styles.headerContainer}>

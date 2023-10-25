@@ -15,12 +15,12 @@ const Footer = () => {
         <nav className={styles.footerNav}>
           <ul>
             {footerLinks.map((item, index) => (
-              <div className={styles.linksContainer}>
+              <div className={styles.linksContainer} key={index}>
                 <div>{item.title}</div>
 
                 <div>
-                  {item.links?.map((link) => (
-                    <li>
+                  {item.links?.map((link,index) => (
+                    <li key={index}>
                       <a href="#">{link.link}</a>
                     </li>
                   ))}

@@ -22,6 +22,9 @@ const DestinationMobile = () => {
         selectedItem={activeSlide}
         infiniteLoop={true}
         showStatus={false} 
+        swipeable={false}
+      
+      
     
       >
         {slider.map((item:any, index:number) => (

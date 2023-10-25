@@ -5,11 +5,11 @@ import Title from "../Title";
 import styles from "./index.module.scss"
 import { useWindowWidth } from "../../hooks/useWindowWidth";
 import PopularMobile from "../PopularMobile";
-import { popularSlider } from "../../constants/constants";
+
 
 const Popular = () => {
   const{width}=useWindowWidth()
-  console.log(width,"width")
+
 
 
   return (
