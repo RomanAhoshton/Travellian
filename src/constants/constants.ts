@@ -9,15 +9,16 @@ import destinationImage2 from "../images/Destination2.svg";
 import destinationImage3 from "../images/Destination3.svg";
 import destinationImage4 from "../images/Destination4.svg";
 import avatar1 from "../images/Avatar1.svg";
-import avatar2 from "../images/Avatar2.svg";
+import avatar2 from "../images/Avatar2.svg"
 import avatar3 from "../images/Avatar3.svg";
 import Star from "../icons/Star";
 import HomeBackground from "../images/Home.png"
 
 
-console.log(avatar1,"1")
+
 
 export const HomeImage=HomeBackground
+console.log(avatar1)
 
 export const menuLinks = [
   { link: "Home" },

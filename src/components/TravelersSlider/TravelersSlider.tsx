@@ -15,7 +15,7 @@ const TravelersSlider = () => {
     totalSlides,
     duplicatedSlides,
   } = useSlider(travelsExperiences);
-  console.log(duplicatedSlides,'slides')
+
 
   return (
     <div className={styles.customSwiperContainer}>
