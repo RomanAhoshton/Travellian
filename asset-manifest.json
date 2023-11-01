@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/travellian/static/css/main.f58327b9.css",
+    "main.js": "/travellian/static/js/main.093495c4.js",
+    "static/media/Col-block3.svg": "/travellian/static/media/Col-block3.3da2629001300dfcd7380820216ce11e.svg",
+    "static/media/Destination2.svg": "/travellian/static/media/Destination2.911055d0f8631dea8aa030428097230b.svg",
+    "static/media/Home.png": "/travellian/static/media/Home.07bc6d5181093c56c3da.png",
+    "static/media/BlogImage.svg": "/travellian/static/media/BlogImage.93844c353d86eb631eb43fce35d83d31.svg",
+    "static/media/tabletBlogImage.svg": "/travellian/static/media/tabletBlogImage.fbe2cc850562b1093cdd5b24e123b247.svg",
+    "static/media/Destination4.svg": "/travellian/static/media/Destination4.de7a4a615c63e8defe685e40b209f99e.svg",
+    "static/media/Destination3.svg": "/travellian/static/media/Destination3.818622c28d18fc4c4c16459cfb2c02e6.svg",
+    "static/media/Destination1.svg": "/travellian/static/media/Destination1.32dd7564e2daa547311423593dabd97d.svg",
+    "static/media/Col-block1.png": "/travellian/static/media/Col-block1.1333f2e218fb3dd45111.png",
+    "static/media/Col-block2.png": "/travellian/static/media/Col-block2.9376201bf3c2fd8381d7.png",
+    "static/media/Special3.png": "/travellian/static/media/Special3.427b8cc94e7f4a56ccdd.png",
+    "static/media/Special1.png": "/travellian/static/media/Special1.d4d27abd3683f0702be2.png",
+    "static/media/Special2.png": "/travellian/static/media/Special2.0c7b3686d19407e710c2.png",
+    "static/media/Avatar1.svg": "/travellian/static/media/Avatar1.06d124eb386b0eec23e4d2a7c54b2f73.svg",
+    "static/media/Avatar2.svg": "/travellian/static/media/Avatar2.23cebac787b5e21c00cd174c215cdbdb.svg",
+    "static/media/Avatar3.svg": "/travellian/static/media/Avatar3.9bb62dfb0bc7af3d9394d9cf2bf3a043.svg",
+    "index.html": "/travellian/index.html",
+    "main.f58327b9.css.map": "/travellian/static/css/main.f58327b9.css.map",
+    "main.093495c4.js.map": "/travellian/static/js/main.093495c4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f58327b9.css",
+    "static/js/main.093495c4.js"
+  ]
+}
