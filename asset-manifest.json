@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/travellian/static/css/main.f58327b9.css",
-    "main.js": "/travellian/static/js/main.093495c4.js",
+    "main.css": "/travellian/static/css/main.e027c2c7.css",
+    "main.js": "/travellian/static/js/main.7361119b.js",
     "static/media/Col-block3.svg": "/travellian/static/media/Col-block3.3da2629001300dfcd7380820216ce11e.svg",
     "static/media/Destination2.svg": "/travellian/static/media/Destination2.911055d0f8631dea8aa030428097230b.svg",
     "static/media/Home.png": "/travellian/static/media/Home.07bc6d5181093c56c3da.png",
@@ -19,11 +19,11 @@
     "static/media/Avatar2.svg": "/travellian/static/media/Avatar2.23cebac787b5e21c00cd174c215cdbdb.svg",
     "static/media/Avatar3.svg": "/travellian/static/media/Avatar3.9bb62dfb0bc7af3d9394d9cf2bf3a043.svg",
     "index.html": "/travellian/index.html",
-    "main.f58327b9.css.map": "/travellian/static/css/main.f58327b9.css.map",
-    "main.093495c4.js.map": "/travellian/static/js/main.093495c4.js.map"
+    "main.e027c2c7.css.map": "/travellian/static/css/main.e027c2c7.css.map",
+    "main.7361119b.js.map": "/travellian/static/js/main.7361119b.js.map"
   },
   "entrypoints": [
-    "static/css/main.f58327b9.css",
-    "static/js/main.093495c4.js"
+    "static/css/main.e027c2c7.css",
+    "static/js/main.7361119b.js"
   ]
 }
