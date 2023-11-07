@@ -1,6 +1,8 @@
+import LazyLoad from "react-lazy-load";
+
 const Star = () => {
   return (
-    <div style={{display:"flex",width:'100%'}}>
+    <div style={{ display: "flex", width: "100%" }}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="25"
@@ -13,6 +15,7 @@ const Star = () => {
           fill="#FFC107"
         />
       </svg>
+
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="25"
@@ -25,6 +28,7 @@ const Star = () => {
           fill="#FFC107"
         />
       </svg>
+
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="25"
@@ -37,6 +41,7 @@ const Star = () => {
           fill="#FFC107"
         />
       </svg>
+
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="25"
@@ -49,6 +54,7 @@ const Star = () => {
           fill="#FFC107"
         />
       </svg>
+
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="25"

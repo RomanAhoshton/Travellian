@@ -1,24 +1,20 @@
 import popularSlide1 from "../images/Col-block1.png";
 import popularSlide2 from "../images/Col-block2.png";
-import popularSlide3 from "../images/Col-block3.svg";
+import popularSlide3 from "../images/Col-block3.png";
 import specialSlide1 from "../images/Special1.png";
 import specialSlide2 from "../images/Special2.png";
 import specialSlide3 from "../images/Special3.png";
-import destinationImage1 from "../images/Destination1.svg";
-import destinationImage2 from "../images/Destination2.svg";
-import destinationImage3 from "../images/Destination3.svg";
-import destinationImage4 from "../images/Destination4.svg";
+import destinationImage1 from "../images/Destination1.png";
+import destinationImage2 from "../images/Destination2.png";
+import destinationImage3 from "../images/Destination3.png";
+import destinationImage4 from "../images/Destination4.png";
 import avatar1 from "../images/Avatar1.svg";
-import avatar2 from "../images/Avatar2.svg"
+import avatar2 from "../images/Avatar2.svg";
 import avatar3 from "../images/Avatar3.svg";
 import Star from "../icons/Star";
-import HomeBackground from "../images/Home.png"
+import HomeBackground from "../images/Home.png";
 
-
-
-
-export const HomeImage=HomeBackground
-console.log(avatar1)
+export const HomeImage = HomeBackground;
 
 export const menuLinks = [
   { link: "Home" },
@@ -30,19 +26,41 @@ export const menuLinks = [
 export const bookNow = [
   {
     description: "Destination",
-    value: "Dubai",
+    option: [
+      {
+        value: "Dubai",
+        label: "Dubai",
+      },
+    ],
   },
   {
     description: "Person",
-    value: "2",
+    option: [
+      {
+        value: "2",
+        label: "2",
+      },
+    ],
   },
   {
     description: "Check IN",
-    value: "Sun, 17th Sep 2020",
+
+    option: [
+      {
+        value: "Sun, 17th Sep 2023",
+        label: "Sun, 17th Sep 2023",
+      },
+    ],
   },
   {
     description: "Check out",
-    value: "Tue, 17th Oct 2020",
+
+    option: [
+      {
+        value: "Tue, 19th Oct 2023",
+        label: "Tue, 19th Oct 2023",
+      },
+    ],
   },
 ];
 
@@ -223,6 +241,4 @@ export const footerLinks = [
       { link: "1245, New York, USA" },
     ],
   },
- 
-  
 ];

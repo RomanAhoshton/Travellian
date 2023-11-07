@@ -1,7 +1,7 @@
 
 import { scroller } from "react-scroll";
 
-const useNavigation = () => {
+export const useNavigation = () => {
   const scrollToElement = (elementId: string) => {
     scroller.scrollTo(elementId, {
       duration: 800, 
@@ -12,4 +12,4 @@ const useNavigation = () => {
   return { scrollToElement };
 };
 
-export default useNavigation;
+

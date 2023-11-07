@@ -1,42 +1,51 @@
-
 import { useWindowWidth } from "../../hooks/useWindowWidth";
-import BlogImage from "../../images/BlogImage.svg";
-import tabletBlogImage from "../../images/tabletBlogImage.svg";
-import styles from "./index.module.scss"
+import BlogImage from "../../images/BlogImage.png";
+import tabletBlogImage from "../../images/tabletBlogImage.png";
+import styles from "./index.module.scss";
 import { aboutItaly } from "../../constants/constants";
 import { useState } from "react";
+import LazyLoad from "react-lazy-load";
 
 const BlogContent = () => {
-  const [readBlog,setReadBlog]=useState<boolean>(false)
-  const {width}=useWindowWidth()
-  const blogImage=width>1024?BlogImage:tabletBlogImage;
-  
-
+  const [readBlog, setReadBlog] = useState<boolean>(false);
+  const { width } = useWindowWidth();
+  const blogImage = width > 1024 ? BlogImage : tabletBlogImage;
 
   return (
     <div className={styles.blogContent}>
       <div className={styles.blogImage}>
-        <img src={blogImage} alt="BlogImage" />
+        <LazyLoad offset={200}>
+          <img src={blogImage} alt="BlogImage" />
+        </LazyLoad>
       </div>
       <div className={styles.textBlog}>
-        <p className={styles.title}>Beautiful Italy<br/> Let’s travel</p>
-        <p className={`${styles.text} ${readBlog?styles.expanded:styles.notExpanded}`}>
-        {!readBlog?aboutItaly.slice(0,505):aboutItaly}
+        <p className={styles.title}>
+          Beautiful Italy
+          <br /> Let’s travel
         </p>
-        <button onClick={()=>setReadBlog(!readBlog)}>
-          <span>{readBlog?"Read Less":"Read More"}</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="28"
-            height="16"
-            viewBox="0 0 28 16"
-            fill="none"
-          >
-            <path
-              d="M27.7071 8.7071C28.0976 8.31658 28.0976 7.68342 27.7071 7.29289L21.3431 0.92893C20.9526 0.538406 20.3195 0.538406 19.9289 0.92893C19.5384 1.31945 19.5384 1.95262 19.9289 2.34314L25.5858 8L19.9289 13.6569C19.5384 14.0474 19.5384 14.6805 19.9289 15.0711C20.3195 15.4616 20.9526 15.4616 21.3431 15.0711L27.7071 8.7071ZM8.74228e-08 9L27 9L27 7L-8.74228e-08 7L8.74228e-08 9Z"
-              fill="#FF7757"
-            />
-          </svg>
+        <p
+          className={`${styles.text} ${
+            readBlog ? styles.expanded : styles.notExpanded
+          }`}
+        >
+          {!readBlog ? aboutItaly.slice(0, 505) : aboutItaly}
+        </p>
+        <button onClick={() => setReadBlog(!readBlog)}>
+          <span>{readBlog ? "Read Less" : "Read More"}</span>
+          <LazyLoad offset={200}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="16"
+              viewBox="0 0 28 16"
+              fill="none"
+            >
+              <path
+                d="M27.7071 8.7071C28.0976 8.31658 28.0976 7.68342 27.7071 7.29289L21.3431 0.92893C20.9526 0.538406 20.3195 0.538406 19.9289 0.92893C19.5384 1.31945 19.5384 1.95262 19.9289 2.34314L25.5858 8L19.9289 13.6569C19.5384 14.0474 19.5384 14.6805 19.9289 15.0711C20.3195 15.4616 20.9526 15.4616 21.3431 15.0711L27.7071 8.7071ZM8.74228e-08 9L27 9L27 7L-8.74228e-08 7L8.74228e-08 9Z"
+                fill="#FF7757"
+              />
+            </svg>
+          </LazyLoad>
         </button>
       </div>
     </div>

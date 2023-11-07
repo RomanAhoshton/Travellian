@@ -4,12 +4,16 @@ import { destinationImages } from "../../constants/constants";
 import Prev from "../Prev";
 import Next from "../Next";
 
-
-
 const DestinationSlider = () => {
-
-const {handlePrev,handleNext,sliderRef,activeSlide,slideWidth,totalSlides,duplicatedSlides}=useSlider(destinationImages)
-
+  const {
+    handlePrev,
+    handleNext,
+    sliderRef,
+    activeSlide,
+    slideWidth,
+    totalSlides,
+    duplicatedSlides,
+  } = useSlider(destinationImages);
 
   return (
     <>

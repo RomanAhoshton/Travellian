@@ -1,16 +1,21 @@
+
 import styles from "./index.module.scss";
 
 interface forProps {
   toggleMenu: boolean;
   setToggleMenu: (arg: boolean) => void;
+
+
 }
 
 const Burger = ({ toggleMenu, setToggleMenu }: forProps) => {
- 
+  const toggleAction=()=>{
+    setToggleMenu(!toggleMenu)
+  }
   return (
     <button
-      className={styles.burgerMenu}
-      onClick={() => setToggleMenu(!toggleMenu)}
+      className={toggleMenu?styles.activeBurger:styles.burgerMenu}
+      onClick={toggleAction}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

@@ -1,24 +1,46 @@
+import { useState } from "react";
 import { bookNow } from "../../constants/constants";
 import styles from "./index.module.scss";
+import Select from "react-select";
 
 const BookNow = () => {
+  const [selectedOption, setSelectedOption] = useState<any>(null);
+
   return (
     <div className={styles.bookContainer}>
       <form className={styles.bookForm}>
-        {bookNow.map((item,index) => (
+        {bookNow.map((item, index) => (
           <div className={styles.itemSelect} key={index}>
-            <label>
-              <span> {item.description}</span>
-              <select>
-                <option value={item.value}>{item.value}</option>
-              </select>
-            </label>
+            <span className={styles.label}>{item.description}</span>
+            <Select
+              defaultValue={selectedOption}
+              onChange={setSelectedOption}
+              options={item.option}
+              placeholder={item.option.map((item)=>item.label)}
+              blurInputOnSelect={false}
+              isDisabled={false}
+              autoFocus={false}
+              components={{
+                IndicatorSeparator: () => null,
+              }}
+              styles={{
+                control: (baseStyles, state) => ({
+                  ...baseStyles,
+                  border: "none",
+                  marginRight:10,
+                  borderColor:'transparent',
+                  boxShadow:"none",
+                  color:'black',
+                })
+              }}
+
+            />
           </div>
         ))}
       </form>
       <div className={styles.bookNow}>
         <button className={styles.bookButton}>
-            <span>Book Now</span>
+          <span>Book Now</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="22"

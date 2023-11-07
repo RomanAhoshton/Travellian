@@ -5,19 +5,22 @@ import Next from "../Next";
 import { useSlider } from "../../hooks/useSlider";
 import { popularSlider } from "../../constants/constants";
 
-
-
 const PopularSlider: React.FC = () => {
-
-  const {handlePrev,handleNext,sliderRef,activeSlide,slideWidth,totalSlides,duplicatedSlides}=useSlider(popularSlider)
-
+  const {
+    handlePrev,
+    handleNext,
+    sliderRef,
+    activeSlide,
+    slideWidth,
+    totalSlides,
+    duplicatedSlides,
+  } = useSlider(popularSlider);
 
   return (
     <div className={styles.customSwiperContainer}>
       <div className={styles.buttonContainer}>
-        <Prev onClick={handlePrev }/>
-        <Next onClick={handleNext}/>
-  
+        <Prev onClick={handlePrev} />
+        <Next onClick={handleNext} />
       </div>
       <div
         className={styles.sliderContainer}
@@ -25,10 +28,10 @@ const PopularSlider: React.FC = () => {
         style={{
           transform: `translateX(${-activeSlide * slideWidth}px)`,
           transition: "transform 0.8s ease",
-          width: `${slideWidth * totalSlides}px`, 
+          width: `${slideWidth * totalSlides}px`,
         }}
       >
-        {duplicatedSlides.map((item:any, index:any) => (
+        {duplicatedSlides.map((item: any, index: any) => (
           <div key={index} className={styles.sliderItem}>
             <img
               src={item.image}

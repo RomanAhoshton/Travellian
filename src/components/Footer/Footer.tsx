@@ -2,15 +2,17 @@ import styles from "./index.module.scss";
 import { footerLinks } from "../../constants/constants";
 import FooterSocial from "../FooterSocial";
 import Logo from "../Logo";
-
+import LazyLoad from "react-lazy-load";
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
         <div className={styles.footerCopyRights}>
-          <Logo />
-          <p>Copyright © Travellian 2020 All rights reserved</p>
+          <LazyLoad offset={200}>
+            <Logo color="white"/>
+          </LazyLoad>
+          <p>Copyright © Travellian 2023 All rights reserved</p>
         </div>
         <nav className={styles.footerNav}>
           <ul>
@@ -19,7 +21,7 @@ const Footer = () => {
                 <div>{item.title}</div>
 
                 <div>
-                  {item.links?.map((link,index) => (
+                  {item.links?.map((link, index) => (
                     <li key={index}>
                       <a href="#">{link.link}</a>
                     </li>
@@ -31,7 +33,9 @@ const Footer = () => {
         </nav>
         <div className={styles.footerSocial}>
           <p>Follow us on</p>
-          <FooterSocial />
+          <LazyLoad offset={200}>
+            <FooterSocial />
+          </LazyLoad>
         </div>
       </div>
     </footer>

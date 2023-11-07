@@ -16,7 +16,7 @@ const SpecialSlider: React.FC = () => {
     slideWidth,
     totalSlides,
     duplicatedSlides,
-  } = useSlider(specialSlider );
+  } = useSlider(specialSlider);
 
   return (
     <div className={styles.customSwiperContainer}>
@@ -33,13 +33,14 @@ const SpecialSlider: React.FC = () => {
           width: `${slideWidth * totalSlides}px`,
         }}
       >
-        {  duplicatedSlides.map((item:any, index:any) => (
+        {duplicatedSlides.map((item: any, index: any) => (
           <div key={index} className={styles.sliderItem}>
             <img
               src={item.image}
               alt={item.image}
               className={styles.customSwiperSlide}
             />
+
             <div className={styles.sliderContent}>
               <p className={styles.title}>{item.title}</p>
               <div className={styles.stars}>
