@@ -1,10 +1,20 @@
 import styles from "./index.module.scss";
 import OrangeButton from "../OrangeButton";
-
+import Input from "../Input";
 import { useOnInput } from "../../hooks/useOnInput";
+import { useRef, useState } from "react";
 
 const SubscribeForm = () => {
-  const { value, isFocused, inputRef, setValue } = useOnInput();
+  const [subscribeValue, setSubscribeValue] = useState<string>("");
+  const [isSubscribeFocused, setSubscribeFocused] = useState<boolean>(false);
+  const inputSubscribeRef = useRef<null | HTMLInputElement>(null);
+  const { value, setValue, isFocused, inputRef } = useOnInput({
+    isFocused: isSubscribeFocused,
+    inputRef: inputSubscribeRef,
+    setValue: setSubscribeValue,
+    setFocused: setSubscribeFocused,
+    value: subscribeValue,
+  });
 
   return (
     <form className={styles.form}>
@@ -13,30 +23,27 @@ const SubscribeForm = () => {
           <p>Our Newsletter</p>
         </div>
         <div className={styles.formActions}>
-          <label
-            htmlFor="email"
-            className={!isFocused ? styles.labelFor : styles.labelFocused}
-          >
-            Enter your email
-          </label>
-          <input
-            type="text"
-            id="email"
-            name="email"
-            className={!isFocused ? styles.input : styles.focusedInput}
-            ref={inputRef}
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-          />
-          <div className={styles.buttonWrapper}>
+          <div style={{ marginRight: 20 }}>
+            <Input
+              value={value}
+              isFocused={isFocused}
+              inputRef={inputRef}
+              setValue={setValue}
+              type="text"
+              id="email"
+              forHtml="email"
+              name="email"
+              placeholder="Enter your email"
+            />
+          </div>
 
-          <OrangeButton
-            text="Subscribe"
-            color="#FFF"
-            background="#FF7757"
-            toggleMenu
-            padding="24px 40px"
-          />
+          <div className={styles.buttonWrapper}>
+            <OrangeButton
+              text="Subscribe"
+              color="#FFF"
+              background="#FF7757"
+              padding="24px 40px"
+            />
           </div>
         </div>
       </div>

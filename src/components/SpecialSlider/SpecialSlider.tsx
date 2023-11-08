@@ -55,7 +55,6 @@ const SpecialSlider: React.FC = () => {
                   text={"Details"}
                   background="#FF7654"
                   color="#FFFFFF"
-                  toggleMenu={false}
                   padding="12px"
                 />
               </div>

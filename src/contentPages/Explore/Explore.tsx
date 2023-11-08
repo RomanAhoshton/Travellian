@@ -1,4 +1,4 @@
-import Popular from "../../components/Popular/Popular";
+import Popular from "../../components/Popular";
 import Special from "../../components/Special";
 import styles from "./index.module.scss";
 

@@ -1,18 +1,31 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 
-export const useOnInput=()=>{
-    const [isFocused, setFocused] = useState<boolean>(false);
-    const [value,setValue]=useState<string>("")
 
-    const inputRef = useRef<null | HTMLInputElement>(null);
+interface forInput{
+  isFocused:boolean
+  value:string|any
+  inputRef:{
+    current:null | HTMLInputElement
+  };
+  setValue:(arg:string|any)=>void;
+  setFocused:(arg:boolean)=>void;
+
+  
+
+}
+export const useOnInput=({isFocused,value,inputRef,setValue,setFocused}:forInput)=>{
   
     const handleDocumentClick = (event: any) => {
-      if (inputRef.current && !inputRef.current.contains(event.target)&&inputRef.current.value==="") {
-        setFocused(false);
 
-        inputRef.current.blur();
-      } else {
-        setFocused(true);
+      if(inputRef.current!==null){
+        if (inputRef.current && !inputRef.current.contains(event.target)&&inputRef.current.value==="") {
+          setFocused(false);
+  
+          inputRef.current.blur();
+        } else {
+          setFocused(true);
+        }
+
       }
     };
     useEffect(() => {
@@ -23,5 +36,5 @@ export const useOnInput=()=>{
       };
     }, []);
 
-    return{isFocused,inputRef,value,setValue}
+    return{isFocused,inputRef,value,setValue,setFocused}
 }

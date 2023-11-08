@@ -1,22 +1,19 @@
-import "./App.scss";
-import Home from "./pages/Home";
-import Explore from "./pages/Explore";
-import Blog from "./pages/Blog/Blog";
-import Travel from "./pages/Travel";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 
+import "./App.scss";
+import ContentPage from "./pages/ContentPage";
+import Signin from "./pages/Signin";
+import Signup from "./pages/Signup";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <Home />
-      <Explore />
-      <Blog/>
-      <Travel/>
-      <Footer/>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/travellian" element={<ContentPage />} />
+        <Route path="/signin" element={<Signin />} />
+        <Route path="/" element={<Signup />} />
+      </Routes>
+    </Router>
   );
 }
 
