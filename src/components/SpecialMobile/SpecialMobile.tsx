@@ -46,10 +46,6 @@ const SpecialMobile = () => {
                   text={"Details"}
                   background="#FF7654"
                   color="#FFFFFF"
-<<<<<<< Updated upstream
-                  toggleMenu={false}
-=======
->>>>>>> Stashed changes
                   padding="12px"
                 />
               </div>
