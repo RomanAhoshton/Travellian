@@ -45,9 +45,9 @@ header {
     background-color: rgb(255, 119, 87);
     color: #fff;
   }
-  .mobileLogout{
-    background-color:#fff;
-    color:rgb(255, 119, 87);
+  .mobileLogout {
+    background-color: #fff;
+    color: rgb(255, 119, 87);
     border-radius: 12px;
     display: flex;
     padding: 15px 15px;
@@ -55,7 +55,6 @@ header {
     align-items: center;
     cursor: pointer;
     font-size: 20px;
-
   }
 
   .menu {
@@ -70,31 +69,12 @@ header {
       position: absolute;
       right: 0;
       top: 0;
-<<<<<<< Updated upstream
-      width: 80%;
-      background-color: rgb(255, 119, 87);;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      color: white;;
-=======
-<<<<<<< Updated upstream
-      width: 100%;
-      background-color: white;
-      height: 500px;
-      display: flex;
-      flex-direction: column;
-      color: rgb(255, 119, 87);
-=======
       width: 80%;
       background-color: rgb(255, 119, 87);
       height: 100vh;
       display: flex;
       flex-direction: column;
       color: white;
->>>>>>> Stashed changes
->>>>>>> Stashed changes
-      z-index: 900;
     }
   }
   .notActive {
@@ -133,24 +113,14 @@ header {
     }
 
     nav {
-<<<<<<< Updated upstream
-      display: flex;
-      flex-direction: column;
-      align-items:center;
-      .menuWrapper {
-=======
-<<<<<<< Updated upstream
-      ul {
-=======
       display: flex;
       flex-direction: column;
       align-items: center;
+
       .menuWrapper {
->>>>>>> Stashed changes
->>>>>>> Stashed changes
         display: flex;
         flex-wrap: wrap;
-        align-items:center;
+        align-items: center;
         @media (max-width: 768px) {
           display: flex;
           flex-direction: column;
@@ -158,24 +128,11 @@ header {
           align-items: center;
           margin-top: 20px;
         }
-<<<<<<< Updated upstream
-        .menuLink {
-=======
-<<<<<<< Updated upstream
-        li {
->>>>>>> Stashed changes
-          
-          margin-right: 32px;
 
-       
-      
-          button{
-=======
         .menuLink {
           margin-right: 32px;
 
           button {
->>>>>>> Stashed changes
             font-family: inherit;
             font-size: 20px;
             font-style: normal;
@@ -185,18 +142,6 @@ header {
             color: #fff;
             border: none;
             cursor: pointer;
-<<<<<<< Updated upstream
-          
-=======
-<<<<<<< Updated upstream
-            @media (max-width:768px){
-              color:#FF7757;;
-
-            }
-
-=======
->>>>>>> Stashed changes
->>>>>>> Stashed changes
           }
 
           @media (max-width: 1024px) {
@@ -250,14 +195,7 @@ header {
         cursor: pointer;
         min-width: 100px;
         margin-right: 20px;
-<<<<<<< Updated upstream
-      
-=======
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
->>>>>>> Stashed changes
         @media (max-width: 1024px) {
           font-size: 16px;
         }
