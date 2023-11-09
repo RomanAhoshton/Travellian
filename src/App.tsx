@@ -1,23 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.scss";
 import ContentPage from "./pages/ContentPage";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import { CONTENT_PAGE, SIGNIN_PAGE, SIGNUP_PAGE } from "./constants/Routes";
 
 function App() {
-  const [token, setToken] = useState<null | object| boolean>(null);
+  const [token, setToken] = useState<any>(null);
 
-  if(token){
-    localStorage.setItem("token",JSON.stringify(token))
-  }
 
+
+  useEffect(() => {
+    const getToken = localStorage.getItem("loginGuest");
+    if(getToken){
+      setToken(true)
+    }
+
+
+  }, [token]);
   return (
     <Router>
       <Routes>
-        {token ? <Route path="/travellian" element={<ContentPage />} /> : null}
-        <Route path="/signin" element={<Signin setToken={setToken} />} />
-        <Route path="/" element={<Signup setToken={setToken} />} />
+        {token ? <Route path={CONTENT_PAGE} element={<ContentPage />} /> : null}
+        <Route path={SIGNIN_PAGE} element={<Signin />} />
+        <Route path={SIGNUP_PAGE} element={<Signup  />} />
       </Routes>
     </Router>
   );

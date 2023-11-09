@@ -14,6 +14,18 @@
     width: 100%;
     justify-content: center;
     align-items: center;
+    p {
+      border-radius: 12px;
+      display: flex;
+      padding: 15px 15px;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      font-size: 20px;
+      background-color: transparent;
+      color: #ff7757;
+      font-family: Playfair Display;
+    }
   
     h2 {
       margin-top: 30px;
@@ -37,11 +49,15 @@
       box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.3);
       height: auto;
       max-width: 600px;
-      min-width: 350px;
+      min-width: 450px;
       border-radius: 16px;
       flex-direction: column;
       padding: 20px;
       margin-right: 0px;
+      @media (max-width:768px) {
+        min-width: 350px;
+        
+      }
   
       .inputContainer {
         display: flex;
@@ -55,17 +71,22 @@
     .button {
       border-radius: 12px;
       display: flex;
-      padding: 15px 15px;
+      padding: 18.5px 18.5px;
       justify-content: center;
       align-items: center;
       cursor: pointer;
-      font-size: 20px;
+      font-size: 30px;
       background-color: #FF7757;
       color:#fff;
       font-family: Playfair Display;
+      @media (max-width:768px) {
+        padding: 15px 15px;
+        
+      }
     
     
     }
+
 
     .guestButton{
       border-radius: 12px;
@@ -123,8 +144,10 @@
         font-weight: 400;
         line-height: normal;
         transition: all 0.3s ease; 
+        min-width: 500px;
         @media (max-width: 768px) {
           padding: 24px 20px;
+          min-width: none;
         }
         @media (max-width: 600px) {
           margin-bottom: 20px;

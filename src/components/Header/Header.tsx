@@ -6,6 +6,7 @@ import Burger from "../Burger";
 import { useHeader } from "../../hooks/useHeader";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../../client";
+import { SIGNUP_PAGE } from "../../constants/Routes";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -22,11 +23,11 @@ const Header = () => {
 
   useEffect(() => {
     const getGuestUser = localStorage.getItem("loginGuest");
-    const getToken = localStorage.getItem("token");
-    if (getGuestUser&&getToken) {
+
+    if (getGuestUser) {
       const getUser = JSON.parse(getGuestUser);
-      const token = JSON.parse(getToken);
-      if (getUser&&token) {
+
+      if (getUser) {
         setUser(true);
       }
     }
@@ -35,13 +36,12 @@ const Header = () => {
   const LogOut = async () => {
     if (user) {
       localStorage.removeItem("loginGuest");
-      localStorage.removeItem("token");
-      navigate("/");
+      navigate(SIGNUP_PAGE);
     } else {
       const { error } = await supabase.auth.signOut();
-      localStorage.removeItem("token");
+      localStorage.removeItem("loginGuest");
       if (error === null) {
-        navigate("/");
+        navigate(SIGNUP_PAGE);
       }
     }
   };

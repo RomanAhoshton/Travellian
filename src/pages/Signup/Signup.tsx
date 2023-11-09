@@ -3,13 +3,10 @@ import styles from "./index.module.scss";
 import { HomeImage } from "../../constants/constants";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../../client";
+import { CONTENT_PAGE, SIGNIN_PAGE, SIGNUP_PAGE } from "../../constants/Routes";
+import { Link } from "react-router-dom";
 
-
-interface token{
-  setToken:(arg:boolean)=>void
-}
-
-const Signup = ({setToken}:token) => {
+const Signup = () => {
   const backgroundImageStyle = {
     backgroundImage: `url(${HomeImage})`,
   };
@@ -29,22 +26,20 @@ const Signup = ({setToken}:token) => {
     e.preventDefault();
 
     try {
-      const { data,error } = await supabase.auth.signUp({
+      const { data, error } = await supabase.auth.signUp({
         email: signinValue.email,
         password: signinValue.password,
       });
       signinValue.email = " ";
       signinValue.password = " ";
 
-  
-
       if (data.user !== null) {
         if (data.user.aud === "authenticated") {
-          navigate("/signin");
+          navigate(SIGNIN_PAGE);
           alert("Please check your email ");
         } else {
-          navigate("/");
-          alert(error)
+          navigate(SIGNUP_PAGE);
+          alert(error);
         }
       }
     } catch (error) {
@@ -63,33 +58,14 @@ const Signup = ({setToken}:token) => {
 
   const LoginGuest = () => {
     setLoginGuest(true);
-    setToken(true)
-  };
-  const HaveAccount = () => {
-    navigate("/signin");
   };
 
   useEffect(() => {
     if (loginGuest) {
       localStorage.setItem("loginGuest", loginGuest.toString());
-
-      navigate("/travellian");
+      navigate(CONTENT_PAGE);
     }
   }, [loginGuest]);
-
-  const handleDocumentClick = () => {
-    setActivePassword(false);
-    setActiveEmail(false)
-  };
-
-  useEffect(() => {
-    document.addEventListener("click", handleDocumentClick);
-
-    return () => {
-      document.removeEventListener("click", handleDocumentClick);
-    };
-  }, []);
-
 
   return (
     <div className={styles.mainImage} style={backgroundImageStyle}>
@@ -115,8 +91,6 @@ const Signup = ({setToken}:token) => {
               onChange={handleChange}
               className={styles.input}
               onFocus={(e) => setActiveEmail(!activeEmail)}
-
-              // placeholder="type your email"
             />
           </div>
           <div className={styles.inputContainer}>
@@ -128,7 +102,7 @@ const Signup = ({setToken}:token) => {
                   : styles.labelFocused
               }
             >
-            Password
+              Password
             </label>
             <input
               type="password"
@@ -138,7 +112,6 @@ const Signup = ({setToken}:token) => {
               onChange={handleChange}
               className={styles.input}
               onFocus={(e) => setActivePassword(!activePassword)}
-              // placeholder="type your password"
             />
           </div>
           <button type="submit" className={styles.button}>
@@ -147,9 +120,10 @@ const Signup = ({setToken}:token) => {
           <button className={styles.guestButton} onClick={LoginGuest}>
             Sing in as a Guest.
           </button>
-          <button className={styles.guestButton} onClick={HaveAccount}>
-            Have already account?
-          </button>
+          <p>
+            {" "}
+            <Link to={SIGNIN_PAGE}> Already have account? Sign in</Link>
+          </p>
         </form>
       </div>
     </div>

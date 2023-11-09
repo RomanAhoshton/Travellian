@@ -1,16 +1,13 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./index.module.scss";
 import { HomeImage } from "../../constants/constants";
 import { supabase } from "../../client";
 import { useNavigate } from "react-router-dom";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
+import { CONTENT_PAGE, SIGNUP_PAGE } from "../../constants/Routes";
 
 
-interface token{
-  setToken:(arg:object)=>void
-}
-
-const Signin = ({setToken}:token) => {
+const Signin = () => {
   const [activePassword, setActivePassword] = useState(false);
   const [activeEmail, setActiveEmail] = useState(false);
 
@@ -33,11 +30,12 @@ const Signin = ({setToken}:token) => {
     });
 
     if (data.user && data.session !== null) {
-      setToken(data)
-      navigate("/travellian");
+     
+      navigate(CONTENT_PAGE);
     } else {
-      alert("The user with the following data is not registered or check your email or password");
-
+      alert(
+        "The user with the following data is not registered or check your email or password"
+      );
     }
   };
 
@@ -49,18 +47,6 @@ const Signin = ({setToken}:token) => {
       };
     });
   };
-  const handleDocumentClick = () => {
-    setActivePassword(false);
-    setActiveEmail(false);
-  };
-
-  useEffect(() => {
-    document.addEventListener("click", handleDocumentClick);
-
-    return () => {
-      document.removeEventListener("click", handleDocumentClick);
-    };
-  }, []);
 
   return (
     <div className={styles.mainImage} id="Home" style={backgroundImageStyle}>
@@ -76,7 +62,7 @@ const Signin = ({setToken}:token) => {
                   : styles.labelFocused
               }
             >
-            Email
+              Email
             </label>
             <input
               type="text"
@@ -86,8 +72,6 @@ const Signin = ({setToken}:token) => {
               onChange={handleChange}
               className={styles.input}
               onFocus={(e) => setActiveEmail(!activeEmail)}
-
-              // placeholder="type your email"
             />
           </div>
           <div className={styles.inputContainer}>
@@ -99,7 +83,7 @@ const Signin = ({setToken}:token) => {
                   : styles.labelFocused
               }
             >
-            Password
+              Password
             </label>
             <input
               type="password"
@@ -109,11 +93,13 @@ const Signin = ({setToken}:token) => {
               onChange={handleChange}
               className={styles.input}
               onFocus={(e) => setActivePassword(!activePassword)}
-              // placeholder="type your password"
             />
           </div>
           <button type="submit"> Sign in </button>
-          <p> <Link to="/"> Back to Sign up</Link></p>
+          <p>
+            {" "}
+            <Link to={SIGNUP_PAGE}> Back to Sign up</Link>
+          </p>
         </form>
       </div>
     </div>
