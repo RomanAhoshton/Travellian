@@ -4,7 +4,12 @@ import { HomeImage } from "../../constants/constants";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../../client";
 
-const Signup = () => {
+
+interface token{
+  setToken:(arg:boolean)=>void
+}
+
+const Signup = ({setToken}:token) => {
   const backgroundImageStyle = {
     backgroundImage: `url(${HomeImage})`,
   };
@@ -24,19 +29,22 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      const { data } = await supabase.auth.signUp({
+      const { data,error } = await supabase.auth.signUp({
         email: signinValue.email,
         password: signinValue.password,
       });
       signinValue.email = " ";
       signinValue.password = " ";
 
+  
+
       if (data.user !== null) {
         if (data.user.aud === "authenticated") {
           navigate("/signin");
-          alert("Please check your email");
+          alert("Please check your email ");
         } else {
           navigate("/");
+          alert(error)
         }
       }
     } catch (error) {
@@ -55,6 +63,7 @@ const Signup = () => {
 
   const LoginGuest = () => {
     setLoginGuest(true);
+    setToken(true)
   };
   const HaveAccount = () => {
     navigate("/signin");
@@ -96,7 +105,7 @@ const Signup = () => {
                   : styles.labelFocused
               }
             >
-              type your email
+              Email
             </label>
             <input
               type="text"
@@ -119,7 +128,7 @@ const Signup = () => {
                   : styles.labelFocused
               }
             >
-              type your password
+            Password
             </label>
             <input
               type="password"

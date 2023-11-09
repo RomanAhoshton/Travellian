@@ -3,8 +3,6 @@ import Logo from "../Logo";
 import styles from "./index.module.scss";
 import { menuLinks } from "../../constants/constants";
 import Burger from "../Burger";
-import { useScroll } from "../../hooks/useScroll";
-import { useNavigation } from "../../hooks/useNavigaton";
 import { useHeader } from "../../hooks/useHeader";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../../client";
@@ -24,9 +22,11 @@ const Header = () => {
 
   useEffect(() => {
     const getGuestUser = localStorage.getItem("loginGuest");
-    if (getGuestUser) {
+    const getToken = localStorage.getItem("token");
+    if (getGuestUser&&getToken) {
       const getUser = JSON.parse(getGuestUser);
-      if (getUser) {
+      const token = JSON.parse(getToken);
+      if (getUser&&token) {
         setUser(true);
       }
     }
@@ -35,9 +35,11 @@ const Header = () => {
   const LogOut = async () => {
     if (user) {
       localStorage.removeItem("loginGuest");
+      localStorage.removeItem("token");
       navigate("/");
     } else {
       const { error } = await supabase.auth.signOut();
+      localStorage.removeItem("token");
       if (error === null) {
         navigate("/");
       }

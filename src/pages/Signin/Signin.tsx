@@ -3,8 +3,14 @@ import styles from "./index.module.scss";
 import { HomeImage } from "../../constants/constants";
 import { supabase } from "../../client";
 import { useNavigate } from "react-router-dom";
+import {Link} from 'react-router-dom'
 
-const Signin = () => {
+
+interface token{
+  setToken:(arg:object)=>void
+}
+
+const Signin = ({setToken}:token) => {
   const [activePassword, setActivePassword] = useState(false);
   const [activeEmail, setActiveEmail] = useState(false);
 
@@ -21,17 +27,17 @@ const Signin = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    try {
-      const { data } = await supabase.auth.signInWithPassword({
-        email: loginValue.email,
-        password: loginValue.password,
-      });
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: loginValue.email,
+      password: loginValue.password,
+    });
 
-      if (data.session?.access_token !== "") {
-        navigate("/travellian");
-      }
-    } catch (error) {
-      console.log(error, "error");
+    if (data.user && data.session !== null) {
+      setToken(data)
+      navigate("/travellian");
+    } else {
+      alert("The user with the following data is not registered or check your email or password");
+
     }
   };
 
@@ -45,7 +51,7 @@ const Signin = () => {
   };
   const handleDocumentClick = () => {
     setActivePassword(false);
-    setActiveEmail(false)
+    setActiveEmail(false);
   };
 
   useEffect(() => {
@@ -70,7 +76,7 @@ const Signin = () => {
                   : styles.labelFocused
               }
             >
-              type your email
+            Email
             </label>
             <input
               type="text"
@@ -93,7 +99,7 @@ const Signin = () => {
                   : styles.labelFocused
               }
             >
-              type your password
+            Password
             </label>
             <input
               type="password"
@@ -107,6 +113,7 @@ const Signin = () => {
             />
           </div>
           <button type="submit"> Sign in </button>
+          <p> <Link to="/"> Back to Sign up</Link></p>
         </form>
       </div>
     </div>
