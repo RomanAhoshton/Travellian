@@ -118,7 +118,7 @@ const Signup = () => {
             Sing up
           </button>
           <button className={styles.guestButton} onClick={LoginGuest}>
-            Sing in as a Guest.
+            Sign in as a Guest.
           </button>
           <p>
             {" "}
