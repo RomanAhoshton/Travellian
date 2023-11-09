@@ -7,18 +7,20 @@ import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import { CONTENT_PAGE, SIGNIN_PAGE, SIGNUP_PAGE } from "./constants/Routes";
 
 function App() {
-  const [token, setToken] = useState<any>(null);
+  const [token, setToken] = useState<boolean>(false);
+  const supabaseTokenKey="sb-eeqorsxttevsnqgauyjs-auth-token"
 
 
 
   useEffect(() => {
     const getToken = localStorage.getItem("loginGuest");
-    if(getToken){
+    const getSupabaseToken=localStorage.getItem(supabaseTokenKey)
+    if(getToken||getSupabaseToken){
       setToken(true)
     }
 
 
-  }, [token]);
+  }, []);
   return (
     <Router>
       <Routes>
