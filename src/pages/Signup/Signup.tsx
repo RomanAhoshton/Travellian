@@ -26,7 +26,7 @@ const Signup = () => {
   const [activeName, setActiveName] = useState<boolean>(false);
 
   const navigate = useNavigate();
-  const [loginGuest, setLoginGuest] = useState<boolean>(false);
+
 
   const [signinValue, setSigninValue] = useState<signInInputs>({
     email: "",
@@ -72,16 +72,7 @@ const Signup = () => {
     });
   };
 
-  const LoginGuest = () => {
-    setLoginGuest(true);
-  };
 
-  useEffect(() => {
-    if (loginGuest) {
-      localStorage.setItem("loginGuest", loginGuest.toString());
-      navigate(CONTENT_PAGE);
-    }
-  }, [loginGuest]);
 
   return (
     <div className={styles.mainImage} style={backgroundImageStyle}>
@@ -156,13 +147,7 @@ const Signup = () => {
               Sing up
             </button>
           </form>
-          <button
-            className={styles.guestButton}
-            onClick={LoginGuest}
-            style={{ marginTop: 30 }}
-          >
-            Sign in as a Guest.
-          </button>
+      
           <p>
             {" "}
             <Link to={SIGNIN_PAGE}> Already have account? Sign in</Link>

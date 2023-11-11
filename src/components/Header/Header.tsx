@@ -1,4 +1,4 @@
-import { useEffect, useState, } from "react";
+import { useEffect, useState } from "react";
 import Logo from "../Logo";
 import styles from "./index.module.scss";
 import { menuLinks } from "../../constants/constants";
@@ -10,7 +10,6 @@ import { SIGNUP_PAGE } from "../../constants/Routes";
 
 const Header = () => {
   const navigate = useNavigate();
-  const [user, setUser] = useState<boolean>(false);
 
   const {
     scroll,
@@ -21,28 +20,10 @@ const Header = () => {
     setToggleMenu,
   } = useHeader();
 
-  useEffect(() => {
-    const getGuestUser = localStorage.getItem("loginGuest");
-
-    if (getGuestUser) {
-      const getUser = JSON.parse(getGuestUser);
-
-      if (getUser) {
-        setUser(true);
-      }
-    }
-  }, []);
-
   const LogOut = async () => {
-    if (user) {
-      localStorage.removeItem("loginGuest");
+    const { error } = await supabase.auth.signOut();
+    if (error === null) {
       navigate(SIGNUP_PAGE);
-    } else {
-      const { error } = await supabase.auth.signOut();
-      localStorage.removeItem("loginGuest");
-      if (error === null) {
-        navigate(SIGNUP_PAGE);
-      }
     }
   };
 

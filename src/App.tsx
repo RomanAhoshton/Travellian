@@ -5,31 +5,25 @@ import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { CONTENT_PAGE, SIGNIN_PAGE, SIGNUP_PAGE } from "./constants/Routes";
-import { ToastContainer } from 'react-toastify';
-
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const [token, setToken] = useState<boolean>(false);
-  const supabaseTokenKey="sb-eeqorsxttevsnqgauyjs-auth-token"
-
-
+  const supabaseTokenKey = "sb-eeqorsxttevsnqgauyjs-auth-token";
 
   useEffect(() => {
-    const getToken = localStorage.getItem("loginGuest");
-    const getSupabaseToken=localStorage.getItem(supabaseTokenKey)
-    if(getToken||getSupabaseToken){
-      setToken(true)
+    const getSupabaseToken = localStorage.getItem(supabaseTokenKey);
+    if (getSupabaseToken) {
+      setToken(true);
     }
-
-
   }, []);
   return (
     <Router>
-        <ToastContainer />
+      <ToastContainer />
       <Routes>
         {token ? <Route path={CONTENT_PAGE} element={<ContentPage />} /> : null}
         <Route path={SIGNIN_PAGE} element={<Signin />} />
-        <Route path={SIGNUP_PAGE} element={<Signup  />} />
+        <Route path={SIGNUP_PAGE} element={<Signup />} />
       </Routes>
     </Router>
   );
