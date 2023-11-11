@@ -40,7 +40,7 @@
     font-family: Playfair Display;
   }
 
-  form {
+  .formContent {
     display: flex;
     margin-top: 20%;
     background: #fff;
@@ -64,6 +64,10 @@
       justify-content: center;
       align-items: center;
     }
+  }
+  form {
+    display: flex;
+    flex-direction: column;
   }
   button {
     border-radius: 12px;

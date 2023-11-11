@@ -3,8 +3,10 @@ import "./App.scss";
 import ContentPage from "./pages/ContentPage";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
-import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { CONTENT_PAGE, SIGNIN_PAGE, SIGNUP_PAGE } from "./constants/Routes";
+import { ToastContainer } from 'react-toastify';
+
 
 function App() {
   const [token, setToken] = useState<boolean>(false);
@@ -23,6 +25,7 @@ function App() {
   }, []);
   return (
     <Router>
+        <ToastContainer />
       <Routes>
         {token ? <Route path={CONTENT_PAGE} element={<ContentPage />} /> : null}
         <Route path={SIGNIN_PAGE} element={<Signin />} />

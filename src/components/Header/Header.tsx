@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, } from "react";
 import Logo from "../Logo";
 import styles from "./index.module.scss";
 import { menuLinks } from "../../constants/constants";
@@ -10,7 +10,7 @@ import { SIGNUP_PAGE } from "../../constants/Routes";
 
 const Header = () => {
   const navigate = useNavigate();
-  const [user, setUser] = useState(false);
+  const [user, setUser] = useState<boolean>(false);
 
   const {
     scroll,

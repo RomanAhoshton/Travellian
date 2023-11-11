@@ -27,42 +27,58 @@ export const bookNow = [
   {
     description: "Destination",
     option: [
-      {
-        value: "Dubai",
-        label: "Dubai",
-      },
+      { value: "Dubai", label: "Dubai" },
+      { value: "Paris", label: "Paris" },
+      { value: "New York", label: "New York" },
+      { value: "Tokyo", label: "Tokyo" },
+      { value: "London", label: "London" },
+      { value: "Sydney", label: "Sydney" },
+      { value: "Rome", label: "Rome" },
+      { value: "Cairo", label: "Cairo" },
     ],
   },
   {
     description: "Person",
     option: [
-      {
-        value: "2",
-        label: "2",
-      },
+      { value: "2", label: "2" },
+      { value: "4", label: "4" },
+      { value: "6", label: "6" },
+      { value: "8", label: "8" },
+      { value: "10", label: "10" },
+      { value: "12", label: "12" },
+      { value: "14", label: "14" },
+      { value: "16", label: "16" },
     ],
   },
   {
     description: "Check IN",
-
     option: [
-      {
-        value: "Sun, 17th Sep 2023",
-        label: "Sun, 17th Sep 2023",
-      },
+      { value: "Sun, 17th Sep 2023", label: "Sun, 17th Sep 2023" },
+      { value: "Fri, 1st Nov 2023", label: "Fri, 1st Nov 2023" },
+      { value: "Wed, 15th Dec 2023", label: "Wed, 15th Dec 2023" },
+      { value: "Sat, 5th Feb 2024", label: "Sat, 5th Feb 2024" },
+      { value: "Mon, 20th Mar 2024", label: "Mon, 20th Mar 2024" },
+      { value: "Thu, 10th May 2024", label: "Thu, 10th May 2024" },
+      { value: "Sat, 1st Jul 2024", label: "Sat, 1st Jul 2024" },
+      { value: "Wed, 15th Aug 2024", label: "Wed, 15th Aug 2024" },
     ],
   },
   {
     description: "Check out",
-
     option: [
-      {
-        value: "Tue, 19th Oct 2023",
-        label: "Tue, 19th Oct 2023",
-      },
+      { value: "Tue, 19th Oct 2023", label: "Tue, 19th Oct 2023" },
+      { value: "Sat, 5th Nov 2023", label: "Sat, 5th Nov 2023" },
+      { value: "Fri, 30th Dec 2023", label: "Fri, 30th Dec 2023" },
+      { value: "Mon, 20th Feb 2024", label: "Mon, 20th Feb 2024" },
+      { value: "Thu, 11th Apr 2024", label: "Thu, 11th Apr 2024" },
+      { value: "Sun, 2nd Jun 2024", label: "Sun, 2nd Jun 2024" },
+      { value: "Tue, 23rd Jul 2024", label: "Tue, 23rd Jul 2024" },
+      { value: "Fri, 16th Sep 2024", label: "Fri, 16th Sep 2024" },
     ],
   },
+  // Add 4 more objects with similar structures...
 ];
+
 
 export const popularSlider = [
   { image: popularSlide1 },

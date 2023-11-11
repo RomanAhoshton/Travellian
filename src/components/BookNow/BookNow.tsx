@@ -3,8 +3,21 @@ import { bookNow } from "../../constants/constants";
 import styles from "./index.module.scss";
 import Select from "react-select";
 
+
+interface select{
+  defaultValue:string,
+  onChange:()=>void,
+  placeholder:string,
+  blurInputOnSelect:boolean;
+  isDisabled:boolean;
+  autoFocus:boolean;
+  components:()=>void
+
+}
+
+
 const BookNow = () => {
-  const [selectedOption, setSelectedOption] = useState<any>(null);
+  const [selectedOption, setSelectedOption] = useState<null|select|any>(null);
 
   return (
     <div className={styles.bookContainer}>
@@ -16,7 +29,7 @@ const BookNow = () => {
               defaultValue={selectedOption}
               onChange={setSelectedOption}
               options={item.option}
-              placeholder={item.option.map((item)=>item.label)}
+              placeholder={"Select"}
               blurInputOnSelect={false}
               isDisabled={false}
               autoFocus={false}
