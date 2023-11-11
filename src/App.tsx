@@ -3,7 +3,7 @@ import "./App.scss";
 import ContentPage from "./pages/ContentPage";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
-import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { CONTENT_PAGE, SIGNIN_PAGE, SIGNUP_PAGE } from "./constants/Routes";
 import { ToastContainer } from 'react-toastify';
 
