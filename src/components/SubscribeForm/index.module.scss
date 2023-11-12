@@ -17,7 +17,6 @@
     button {
       @media (max-width: 768px) {
         min-width: 100%;
-     
       }
     }
   }
@@ -77,5 +76,12 @@
     @media (max-width: 768px) {
       font-size: 48px;
     }
+  }
+}
+.inputContainer {
+  margin-right: 20px;
+  width: 100%;
+  @media (max-width: 600px) {
+    margin-right: 0px;
   }
 }

@@ -10,7 +10,7 @@ const Footer = () => {
       <div className={styles.footerContainer}>
         <div className={styles.footerCopyRights}>
           <LazyLoad offset={200}>
-            <Logo color="white"/>
+            <Logo color="white" />
           </LazyLoad>
           <p>Copyright © Travellian 2023 All rights reserved</p>
         </div>
@@ -23,7 +23,9 @@ const Footer = () => {
                 <div>
                   {item.links?.map((link, index) => (
                     <li key={index}>
-                      <a href="#">{link.link}</a>
+                      <a href="#" onClick={(e) => e.preventDefault()}>
+                        {link.link}
+                      </a>
                     </li>
                   ))}
                 </div>

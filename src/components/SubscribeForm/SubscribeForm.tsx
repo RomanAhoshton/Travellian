@@ -23,7 +23,7 @@ const SubscribeForm = () => {
           <p>Our Newsletter</p>
         </div>
         <div className={styles.formActions}>
-          <div style={{ marginRight: 20 }}>
+          <div className={styles.inputContainer}>
             <Input
               value={value}
               isFocused={isFocused}
