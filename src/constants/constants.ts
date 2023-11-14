@@ -14,6 +14,29 @@ import avatar3 from "../images/Avatar3.svg";
 import Star from "../icons/Star";
 import HomeBackground from "../images/Home.png";
 
+
+
+const currentDate = new Date();
+const day = currentDate.getDate();
+const month = currentDate.getMonth();
+const year = currentDate.getFullYear();
+
+const formattedDate = `${day}.${month + 1}.${year}`;
+
+const optionCount = 8;
+const dateOptions = [{ value: formattedDate, label: formattedDate }];
+
+for (let i = 1; i < optionCount; i++) {
+  const nextDate = new Date(currentDate);
+  nextDate.setDate(day + i);
+  const nextDay = nextDate.getDate().toString().padStart(2, "0");
+  const nextMonth = (nextDate.getMonth() + 1).toString().padStart(2, "0");
+  const nextYear = nextDate.getFullYear();
+
+  const nextFormattedDate = `${nextDay}.${nextMonth}.${nextYear}`;
+  dateOptions.push({ value: nextFormattedDate, label: nextFormattedDate });
+}
+
 export const HomeImage = HomeBackground;
 
 export const menuLinks = [
@@ -40,45 +63,25 @@ export const bookNow = [
   {
     description: "Person",
     option: [
+      { value: "1", label: "1" },
       { value: "2", label: "2" },
+      { value: "3", label: "3" },
       { value: "4", label: "4" },
+      { value: "5", label: "5" },
       { value: "6", label: "6" },
+      { value: "7", label: "7" },
       { value: "8", label: "8" },
-      { value: "10", label: "10" },
-      { value: "12", label: "12" },
-      { value: "14", label: "14" },
-      { value: "16", label: "16" },
     ],
   },
   {
     description: "Check IN",
-    option: [
-      { value: "Sun, 17th Sep 2023", label: "Sun, 17th Sep 2023" },
-      { value: "Fri, 1st Nov 2023", label: "Fri, 1st Nov 2023" },
-      { value: "Wed, 15th Dec 2023", label: "Wed, 15th Dec 2023" },
-      { value: "Sat, 5th Feb 2024", label: "Sat, 5th Feb 2024" },
-      { value: "Mon, 20th Mar 2024", label: "Mon, 20th Mar 2024" },
-      { value: "Thu, 10th May 2024", label: "Thu, 10th May 2024" },
-      { value: "Sat, 1st Jul 2024", label: "Sat, 1st Jul 2024" },
-      { value: "Wed, 15th Aug 2024", label: "Wed, 15th Aug 2024" },
-    ],
+    option: dateOptions,
   },
   {
     description: "Check out",
-    option: [
-      { value: "Tue, 19th Oct 2023", label: "Tue, 19th Oct 2023" },
-      { value: "Sat, 5th Nov 2023", label: "Sat, 5th Nov 2023" },
-      { value: "Fri, 30th Dec 2023", label: "Fri, 30th Dec 2023" },
-      { value: "Mon, 20th Feb 2024", label: "Mon, 20th Feb 2024" },
-      { value: "Thu, 11th Apr 2024", label: "Thu, 11th Apr 2024" },
-      { value: "Sun, 2nd Jun 2024", label: "Sun, 2nd Jun 2024" },
-      { value: "Tue, 23rd Jul 2024", label: "Tue, 23rd Jul 2024" },
-      { value: "Fri, 16th Sep 2024", label: "Fri, 16th Sep 2024" },
-    ],
+    option: dateOptions,
   },
-  // Add 4 more objects with similar structures...
 ];
-
 
 export const popularSlider = [
   { image: popularSlide1 },

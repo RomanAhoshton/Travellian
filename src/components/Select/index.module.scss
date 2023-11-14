@@ -1,0 +1,61 @@
+// CustomSelect.module.scss
+.customSelect {
+    position: relative;
+    font-family: Playfair Display;
+
+  }
+  
+  .selectSelected {
+    background-color: #fff;
+    padding: 8px 16px;
+    cursor: pointer;
+    color:#767E86;
+    text-align: center;
+  }
+  
+  .selectSelected:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #767E86 transparent transparent transparent;
+    transform: translateY(-50%);
+
+  }
+  
+  .selectArrowActive:after {
+    border-color: transparent transparent #ff7757  transparent;
+    top: 7px;
+
+  }
+  
+  .selectItems {
+    position: absolute;
+    text-align: center;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    background-color:#fff;
+  }
+  
+  .selectHide {
+    display: none;
+  }
+  
+  .selectItem {
+    color: #767E86 ;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+  
+    &:hover,
+    &.same-as-selected {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+  

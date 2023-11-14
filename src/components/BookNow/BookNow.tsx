@@ -1,53 +1,18 @@
-import { useState } from "react";
+
 import { bookNow } from "../../constants/constants";
 import styles from "./index.module.scss";
-import Select from "react-select";
+import Select from "../Select";
 
-
-interface select{
-  defaultValue:string,
-  onChange:()=>void,
-  placeholder:string,
-  blurInputOnSelect:boolean;
-  isDisabled:boolean;
-  autoFocus:boolean;
-  components:()=>void
-
-}
 
 
 const BookNow = () => {
-  const [selectedOption, setSelectedOption] = useState<null|select|any>(null);
-
   return (
     <div className={styles.bookContainer}>
       <form className={styles.bookForm}>
         {bookNow.map((item, index) => (
           <div className={styles.itemSelect} key={index}>
             <span className={styles.label}>{item.description}</span>
-            <Select
-              defaultValue={selectedOption}
-              onChange={setSelectedOption}
-              options={item.option}
-              placeholder={"Select"}
-              blurInputOnSelect={false}
-              isDisabled={false}
-              autoFocus={false}
-              components={{
-                IndicatorSeparator: () => null,
-              }}
-              styles={{
-                control: (baseStyles, state) => ({
-                  ...baseStyles,
-                  border: "none",
-                  marginRight:10,
-                  borderColor:'transparent',
-                  boxShadow:"none",
-                  color:'black',
-                })
-              }}
-
-            />
+            <Select options={item.option} />
           </div>
         ))}
       </form>

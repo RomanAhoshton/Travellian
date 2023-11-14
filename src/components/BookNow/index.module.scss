@@ -65,7 +65,13 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-right: 10px;
+    @media (max-width: 768px) {
+      margin-right: 0px;
+      margin-bottom: 10px;
+    }
   }
+
   .label {
     color: #767e86;
     font-family: Rubik;
@@ -76,32 +82,14 @@
     text-transform: uppercase;
     display: flex;
     flex-direction: column;
-    margin-right: 40px;
     padding: 20px;
     align-items: start;
+    text-align: center;
     border-bottom: 1px solid #000;
-    margin-left: 10px;
-
     @media (max-width: 768px) {
-      margin-right: 0;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-left: 0;
-    }
-  }
-  .select {
-    color: #172432;
-    font-family: Playfair Display;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    border: none;
-
-    option {
-      border: 1 px solid #172432;
-      border-top: none;
     }
   }
 }
