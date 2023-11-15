@@ -1,4 +1,4 @@
-// CustomSelect.tsx
+
 import React, { useState, useRef, useEffect } from "react";
 import styles from "./index.module.scss";
 
@@ -7,7 +7,7 @@ const Select: React.FC<{ options: { value: string; label: string }[] }> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState("");
-  console.log(selectedOption,"option")
+
 
   const selectRef = useRef<HTMLSelectElement>(null);
 
@@ -18,7 +18,7 @@ const Select: React.FC<{ options: { value: string; label: string }[] }> = ({
         closeSelect();
       }
     };
-    console.log(options,"uption ")
+
 
     document.addEventListener("click", handleDocumentClick);
 

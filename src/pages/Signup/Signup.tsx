@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./index.module.scss";
 import { HomeImage } from "../../constants/constants";
 import { useNavigate } from "react-router-dom";
@@ -7,15 +7,16 @@ import { CONTENT_PAGE, SIGNIN_PAGE } from "../../constants/Routes";
 import { Link } from "react-router-dom";
 import useToast from "../../hooks/useToast";
 
+import { toast } from "react-toastify";
 
-interface signInInputs{
-  email:string,
-  password:string,
-  name:string,
+interface signInInputs {
+  email: string;
+  password: string;
+  name: string;
 }
 
 const Signup = () => {
-  const { successToast, errorToastRegister } = useToast();
+  const { successToast, errorToastRegister,errorToast } = useToast();
 
   const backgroundImageStyle = {
     backgroundImage: `url(${HomeImage})`,
@@ -27,15 +28,13 @@ const Signup = () => {
 
   const navigate = useNavigate();
 
-
   const [signinValue, setSigninValue] = useState<signInInputs>({
     email: "",
     password: "",
-    name:""
+    name: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
- 
     e.preventDefault();
 
     const { data } = await supabase.auth.signUp({
@@ -44,14 +43,12 @@ const Signup = () => {
       options: {
         data: {
           first_name: signinValue.name,
-         
-        }
-      }
-      
+        },
+      },
     });
     signinValue.email = " ";
     signinValue.password = " ";
-    signinValue.name=" "
+    signinValue.name = " ";
 
     if (data.user !== null) {
       if (data.user.aud === "authenticated") {
@@ -71,8 +68,29 @@ const Signup = () => {
       };
     });
   };
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
 
+    const { data } = await supabase.auth.signInWithPassword({
+      email: "Guest@gmail.com",
+      password: "1234567",
+    });
 
+    if (data.user && data.session !== null) {
+      toast.info(`Welcome ${data.user.user_metadata.first_name || " "}`, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+
+      navigate(CONTENT_PAGE);
+    } else {
+      errorToast();
+    }
+  };
 
   return (
     <div className={styles.mainImage} style={backgroundImageStyle}>
@@ -147,11 +165,12 @@ const Signup = () => {
               Sing up
             </button>
           </form>
-      
+
           <p>
             {" "}
             <Link to={SIGNIN_PAGE}> Already have account? Sign in</Link>
           </p>
+          <button className={styles.guestIn} onClick={(e)=>handleLogin(e)}>Sign in as a Guest</button>
         </div>
       </div>
     </div>
