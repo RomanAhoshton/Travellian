@@ -8,5 +8,9 @@
         &:last-child{
             margin-right: 0px;
         }
+        &:hover{
+            scale: 1.2;
+            transition: 0.5s ease-in;
+        }
     }
 }

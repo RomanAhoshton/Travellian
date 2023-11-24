@@ -23,12 +23,14 @@
     border: 6px solid transparent;
     border-color: #767E86 transparent transparent transparent;
     transform: translateY(-50%);
+    transition: 0.3s ease-in-out;
 
   }
   
   .selectArrowActive:after {
     border-color: transparent transparent #ff7757  transparent;
     top: 7px;
+    transition: 0.3s ease-in-out;
 
   }
   
