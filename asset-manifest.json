@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/travellian/static/css/main.41c8b9f6.css",
+    "main.css": "/travellian/static/css/main.8f819a84.css",
     "main.js": "/travellian/static/js/main.eb6f0b5b.js",
     "static/media/Col-block1.png": "/travellian/static/media/Col-block1.1333f2e218fb3dd45111.png",
     "static/media/Col-block2.png": "/travellian/static/media/Col-block2.9376201bf3c2fd8381d7.png",
@@ -19,11 +19,11 @@
     "static/media/Avatar2.svg": "/travellian/static/media/Avatar2.23cebac787b5e21c00cd174c215cdbdb.svg",
     "static/media/Avatar3.svg": "/travellian/static/media/Avatar3.9bb62dfb0bc7af3d9394d9cf2bf3a043.svg",
     "index.html": "/travellian/index.html",
-    "main.41c8b9f6.css.map": "/travellian/static/css/main.41c8b9f6.css.map",
+    "main.8f819a84.css.map": "/travellian/static/css/main.8f819a84.css.map",
     "main.eb6f0b5b.js.map": "/travellian/static/js/main.eb6f0b5b.js.map"
   },
   "entrypoints": [
-    "static/css/main.41c8b9f6.css",
+    "static/css/main.8f819a84.css",
     "static/js/main.eb6f0b5b.js"
   ]
 }
