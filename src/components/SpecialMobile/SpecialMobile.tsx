@@ -7,6 +7,7 @@ import Prev from "../Prev";
 import Next from "../Next";
 import OrangeButton from "../OrangeButton";
 import Star from "../../icons/Star";
+import { Slider } from "../../types";
 
 const SpecialMobile = () => {
   const { handleNextClick, handlePrevClick, activeSlide, slider } =
@@ -24,7 +25,7 @@ const SpecialMobile = () => {
         showStatus={false}
         swipeable={false}
       >
-        {slider.map((item: any, index: any) => (
+        {slider.map((item: Slider, index: number) => (
           <div key={index} className={styles.sliderItem}>
             <img
               src={item.image}
@@ -40,8 +41,8 @@ const SpecialMobile = () => {
               <p className={styles.subtitle}>{item.subtitle}</p>
 
               <div className={styles.priceDetails}>
-                <span>{item.price.from}</span>
-                <p>{item.price.number}</p>
+                <span>{item?.price?.from}</span>
+                <p>{item.price?.number}</p>
                 <OrangeButton
                   text={"Details"}
                   background="#FF7654"

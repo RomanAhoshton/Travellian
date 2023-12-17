@@ -4,11 +4,11 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
-const  useToast = () => {
+const  useToasts = () => {
   const successToast = () => {
     toast.success('Your account has been successfully created.', {
       position: 'top-right',
-      autoClose: 5000, // milliseconds
+      autoClose: 5000, 
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -54,4 +54,4 @@ const  useToast = () => {
   
 };
 
-export default useToast ;
+export default useToasts ;

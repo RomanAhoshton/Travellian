@@ -1,16 +1,12 @@
-import { useEffect, useState } from "react";
+
 import Logo from "../Logo";
 import styles from "./index.module.scss";
 import { menuLinks } from "../../constants/constants";
 import Burger from "../Burger";
 import { useHeader } from "../../hooks/useHeader";
-import { useNavigate } from "react-router-dom";
-import { supabase } from "../../client";
-import { SIGNUP_PAGE } from "../../constants/Routes";
+
 
 const Header = () => {
-  const navigate = useNavigate();
-
   const {
     scroll,
     width,
@@ -18,14 +14,8 @@ const Header = () => {
     handleScrollToSection,
     handlers,
     setToggleMenu,
+    LogOut,
   } = useHeader();
-
-  const LogOut = async () => {
-    const { error } = await supabase.auth.signOut();
-    if (error === null) {
-      navigate(SIGNUP_PAGE);
-    }
-  };
 
   return (
     <header

@@ -4,6 +4,7 @@ import Prev from "../Prev";
 import Next from "../Next";
 import { useSlider } from "../../hooks/useSlider";
 import { popularSlider } from "../../constants/constants";
+import { Slider } from "../../types";
 
 const PopularSlider: React.FC = () => {
   const {
@@ -31,7 +32,7 @@ const PopularSlider: React.FC = () => {
           width: `${slideWidth * totalSlides}px`,
         }}
       >
-        {duplicatedSlides.map((item: any, index: any) => (
+        {duplicatedSlides.map((item: Slider, index: number) => (
           <div key={index} className={styles.sliderItem}>
             <img
               src={item.image}

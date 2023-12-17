@@ -7,7 +7,7 @@ export const useScroll=()=>{
 
     useEffect(() => {
         const handleScroll = () => {
-          // const isAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight;
+
           setScroll(window.scrollY);
         };
     

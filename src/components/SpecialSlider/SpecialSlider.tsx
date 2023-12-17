@@ -6,6 +6,7 @@ import { useSlider } from "../../hooks/useSlider";
 import { specialSlider } from "../../constants/constants";
 import Star from "../../icons/Star";
 import OrangeButton from "../OrangeButton";
+import { Slider } from "../../types";
 
 const SpecialSlider: React.FC = () => {
   const {
@@ -33,7 +34,7 @@ const SpecialSlider: React.FC = () => {
           width: `${slideWidth * totalSlides}px`,
         }}
       >
-        {duplicatedSlides.map((item: any, index: any) => (
+        {duplicatedSlides.map((item: Slider, index: number) => (
           <div key={index} className={styles.sliderItem}>
             <img
               src={item.image}
@@ -49,8 +50,8 @@ const SpecialSlider: React.FC = () => {
               <p className={styles.subtitle}>{item.subtitle}</p>
 
               <div className={styles.priceDetails}>
-                <span>{item.price.from}</span>
-                <p>{item.price.number}</p>
+                <span>{item?.price?.from}</span>
+                <p>{item.price?.number}</p>
                 <OrangeButton
                   text={"Details"}
                   background="#FF7654"

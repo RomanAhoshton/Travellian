@@ -6,6 +6,7 @@ import { travelsExperiences } from "../../constants/constants";
 import Prev from "../Prev";
 import Next from "../Next";
 import Star from "../../icons/Star";
+import { Slider } from "../../types";
 
 const SpecialMobile = () => {
   const { handleNextClick, handlePrevClick, activeSlide, slider } =
@@ -23,7 +24,7 @@ const SpecialMobile = () => {
         showStatus={false}
         swipeable={false}
       >
-        {slider.map((item: any, index: number) => (
+        {slider.map((item: Slider, index: number) => (
           <div key={index} className={styles.sliderItem}>
             <div className={styles.avatarWrapper}>
               <img src={item.avatar} alt={"avatar"} />

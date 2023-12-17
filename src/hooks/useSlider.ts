@@ -1,17 +1,10 @@
 import { useRef, useState } from "react";
 import { useWindowWidth } from "./useWindowWidth";
+import { Slider } from "../types";
 
-export interface Slider {
-  handlePrev: () => void;
-  handleNext: () => void;
-  sliderRef: HTMLDivElement | null;
-  activeSlide: number;
-  slideWidth: number;
-  totalSlides: number;
-  duplicatedSlides: object[];
-}
 
-export const useSlider = (slider: object[]): Slider | any => {
+
+export const useSlider = (slider: Slider [])  => {
   const { width } = useWindowWidth();
   const totalSlides = slider.length;
   const [activeSlide, setActiveSlide] = useState(0);

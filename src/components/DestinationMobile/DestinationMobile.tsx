@@ -5,6 +5,7 @@ import { useMobileSlider } from "../../hooks/useMobileSlider";
 import { destinationImages } from "../../constants/constants";
 import Prev from "../Prev";
 import Next from "../Next";
+import { Slider } from "../../types";
 
 const DestinationMobile = () => {
   const { handleNextClick, handlePrevClick, activeSlide, slider } =
@@ -22,7 +23,7 @@ const DestinationMobile = () => {
         showStatus={false}
         swipeable={false}
       >
-        {slider.map((item: any, index: number) => (
+        {slider.map((item: Slider, index: number) => (
           <div key={index}>
             <img src={item.image} alt={`Slide ${index}`} />
           </div>

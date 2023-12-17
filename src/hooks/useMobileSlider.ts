@@ -1,8 +1,9 @@
 
 import { useState } from 'react';
+import { Slider } from '../types';
 
 
-export const useMobileSlider = (slider:any) => {
+export const useMobileSlider = (slider:Slider[]) => {
  
    const [activeSlide, setActiveSlide] = useState<number>(0);
 

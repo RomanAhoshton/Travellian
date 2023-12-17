@@ -3,6 +3,7 @@ import styles from "./index.module.scss";
 import { destinationImages } from "../../constants/constants";
 import Prev from "../Prev";
 import Next from "../Next";
+import { Slider } from "../../types";
 
 const DestinationSlider = () => {
   const {
@@ -31,7 +32,7 @@ const DestinationSlider = () => {
             width: `${slideWidth * totalSlides}px`,
           }}
         >
-          {duplicatedSlides.map((item: any, index: any) => (
+          {duplicatedSlides.map((item: Slider, index: number) => (
             <div key={index} className={styles.sliderItem}>
               <img
                 src={item.image}

@@ -3,22 +3,21 @@ import { useEffect } from "react";
 
 interface forInput{
   isFocused:boolean
-  value:string|any
+  value:string
   inputRef:{
     current:null | HTMLInputElement
   };
-  setValue:(arg:string|any)=>void;
+  setValue:(arg:string)=>void;
   setFocused:(arg:boolean)=>void;
-
-  
 
 }
 export const useOnInput=({isFocused,value,inputRef,setValue,setFocused}:forInput)=>{
   
-    const handleDocumentClick = (event: any) => {
+    const handleDocumentClick = (event: MouseEvent) => {
 
       if(inputRef.current!==null){
-        if (inputRef.current && !inputRef.current.contains(event.target)&&inputRef.current.value==="") {
+        const target = event.target as HTMLInputElement;
+        if (inputRef.current && !inputRef.current.contains(target)&&inputRef.current.value==="") {
           setFocused(false);
   
           inputRef.current.blur();

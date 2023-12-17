@@ -4,7 +4,7 @@ import Prev from "../Prev";
 import Next from "../Next";
 import { useSlider } from "../../hooks/useSlider";
 import Star from "../../icons/Star";
-import LazyLoad from "react-lazy-load";
+import { Slider } from "../../types";
 
 const TravelersSlider = () => {
   const {
@@ -32,7 +32,7 @@ const TravelersSlider = () => {
           width: `${slideWidth * totalSlides}px`,
         }}
       >
-        {duplicatedSlides.map((item: any, index: number) => (
+        {duplicatedSlides.map((item: Slider, index: number) => (
           <div key={index} className={styles.sliderItem}>
             <div className={styles.avatarWrapper}>
               <img src={item.avatar} alt={"avatar"} />
