@@ -1,3 +1,3 @@
-export const CONTENT_PAGE="/travellian/content-page"
-export const SIGNIN_PAGE="/travellian/signin"
-export const SIGNUP_PAGE="/"
+export const CONTENT="/travellian/content-page"
+export const SIGNIN="/travellian/sign-in"
+export const SIGNUP="/" 

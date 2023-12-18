@@ -1,6 +1,6 @@
 import styles from "./index.module.scss";
 import { HomeImage } from "../../constants/constants";
-import { SIGNIN_PAGE } from "../../constants/Routes";
+import { SIGNIN } from "../../constants/Routes";
 import { Link } from "react-router-dom";
 import { useGuestLogin } from "../../hooks/useLoginGuest";
 import SighUpForm from "../../components/SighUpForm";
@@ -20,7 +20,7 @@ const Signup = () => {
 
           <p>
             {" "}
-            <Link to={SIGNIN_PAGE}> Already have account? Sign in</Link>
+            <Link to={SIGNIN}> Already have account? Sign in</Link>
           </p>
           <button className={styles.guestIn} onClick={guestLogin} >
             Sign in as a Guest

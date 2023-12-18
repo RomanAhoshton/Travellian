@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { CONTENT_PAGE } from "../constants/Routes";
+import { CONTENT } from "../constants/Routes";
 import { toast } from "react-toastify";
 import useToasts from "./useToasts";
 import { supabase } from "../client";
@@ -8,7 +8,7 @@ import { loginInputs } from "../types";
 import { useAuth } from "./useAuth";
 
 export const useLogin = () => {
-  const { setAuthenticated } = useAuth();
+  const { auth } = useAuth();
   const [loginValue, setLoginValue] = useState<loginInputs>({
     email: "",
     password: "",
@@ -42,8 +42,8 @@ export const useLogin = () => {
         draggable: true,
       });
 
-      setAuthenticated(true);
-      navigate(CONTENT_PAGE);
+      auth(true);
+      navigate(CONTENT);
     } else {
       errorToast();
     }

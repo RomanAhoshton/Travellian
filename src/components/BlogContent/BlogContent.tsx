@@ -4,7 +4,7 @@ import tabletBlogImage from "../../images/tabletBlogImage.png";
 import styles from "./index.module.scss";
 import { aboutItaly } from "../../constants/constants";
 import { useState } from "react";
-import LazyLoad from "react-lazy-load";
+
 
 const BlogContent = () => {
   const [readBlog, setReadBlog] = useState<boolean>(false);
@@ -14,9 +14,9 @@ const BlogContent = () => {
   return (
     <div className={styles.blogContent}>
       <div className={styles.blogImage}>
-        <LazyLoad offset={200}>
+   
           <img src={blogImage} alt="BlogImage" />
-        </LazyLoad>
+     
       </div>
       <div className={styles.textBlog}>
         <p className={styles.title}>
@@ -32,7 +32,7 @@ const BlogContent = () => {
         </p>
         <button onClick={() => setReadBlog(!readBlog)}>
           <span>{readBlog ? "Read Less" : "Read More"}</span>
-          <LazyLoad offset={200}>
+         
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="28"
@@ -45,7 +45,7 @@ const BlogContent = () => {
                 fill="#FF7757"
               />
             </svg>
-          </LazyLoad>
+
         </button>
       </div>
     </div>

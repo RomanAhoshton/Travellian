@@ -5,10 +5,12 @@ import { useWindowWidth } from "./useWindowWidth";
 import { useEffect, useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import { supabase } from "../client";
-import { SIGNUP_PAGE } from "../constants/Routes";
+import { SIGNUP } from "../constants/Routes";
+import { useAuth } from "./useAuth";
 
 export const useHeader=()=>{
     const navigate=useNavigate()
+    const {auth}=useAuth()
     const { scrollToElement } = useNavigation();
     const [toggleMenu, setToggleMenu] = useState<boolean>(false);
     const { width } = useWindowWidth();
@@ -18,7 +20,8 @@ export const useHeader=()=>{
     const LogOut = async () => {
       const { error } = await supabase.auth.signOut();
       if (error === null) {
-        navigate(SIGNUP_PAGE);
+        navigate(SIGNUP);
+        auth(false)
       }
     };
   

@@ -1,18 +1,16 @@
-
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../client";
-import { CONTENT_PAGE } from "../constants/Routes";
+import { CONTENT } from "../constants/Routes";
 import { toast } from "react-toastify";
 import useToasts from "./useToasts";
 import { useAuth } from "./useAuth";
 
 export const useGuestLogin = () => {
+  const { errorToast } = useToasts();
+  const navigate = useNavigate();
+  const { auth } = useAuth();
 
-   const {errorToast}=useToasts()
-   const navigate=useNavigate()
-   const {setAuthenticated}=useAuth()
-   
-   const guestLogin = async () => {
+  const guestLogin = async () => {
     const { data } = await supabase.auth.signInWithPassword({
       email: "Guest@gmail.com",
       password: "1234567",
@@ -28,14 +26,14 @@ export const useGuestLogin = () => {
         draggable: true,
       });
 
-      setAuthenticated(true)
-      navigate(CONTENT_PAGE);
+      auth(true);
+      navigate(CONTENT);
     } else {
       errorToast();
     }
   };
 
-  return{
-    guestLogin
-  }
+  return {
+    guestLogin,
+  };
 };

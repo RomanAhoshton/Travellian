@@ -1,4 +1,4 @@
-import LazyLoad from "react-lazy-load";
+
 
 const Star = () => {
   return (

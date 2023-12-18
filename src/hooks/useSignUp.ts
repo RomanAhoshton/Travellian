@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../client";
-import {  SIGNIN_PAGE } from "../constants/Routes";
+import {  SIGNIN} from "../constants/Routes";
 import useToasts from "./useToasts";
 import { signInInputs } from "../types/index";
 
@@ -43,7 +43,7 @@ export const useSignUp = () => {
 
     if (data.user !== null) {
       if (data.user.aud === "authenticated") {
-        navigate(SIGNIN_PAGE);
+        navigate(SIGNIN)
         successToast();
       }
     } else {
