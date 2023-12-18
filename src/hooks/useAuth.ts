@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export const useAuth = () => {
-  const [isAuthenticated, setisAuthenticated] = useState(false);
+  const [isAuthenticated, setAuthenticated] = useState(false);
 
-  return { isAuthenticated, setisAuthenticated };
+  return { isAuthenticated, setAuthenticated };
 };

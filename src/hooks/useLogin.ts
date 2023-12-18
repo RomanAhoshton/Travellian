@@ -8,7 +8,7 @@ import { loginInputs } from "../types";
 import { useAuth } from "./useAuth";
 
 export const useLogin = () => {
-  const { setisAuthenticated } = useAuth();
+  const { setAuthenticated } = useAuth();
   const [loginValue, setLoginValue] = useState<loginInputs>({
     email: "",
     password: "",
@@ -42,7 +42,7 @@ export const useLogin = () => {
         draggable: true,
       });
 
-      setisAuthenticated(true);
+      setAuthenticated(true);
       navigate(CONTENT_PAGE);
     } else {
       errorToast();

@@ -10,7 +10,7 @@ export const useGuestLogin = () => {
 
    const {errorToast}=useToasts()
    const navigate=useNavigate()
-   const {setisAuthenticated}=useAuth()
+   const {setAuthenticated}=useAuth()
    
    const guestLogin = async () => {
     const { data } = await supabase.auth.signInWithPassword({
@@ -28,7 +28,7 @@ export const useGuestLogin = () => {
         draggable: true,
       });
 
-      setisAuthenticated(true)
+      setAuthenticated(true)
       navigate(CONTENT_PAGE);
     } else {
       errorToast();

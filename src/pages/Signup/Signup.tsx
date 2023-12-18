@@ -22,7 +22,7 @@ const Signup = () => {
             {" "}
             <Link to={SIGNIN_PAGE}> Already have account? Sign in</Link>
           </p>
-          <button className={styles.guestIn} onClick={guestLogin}>
+          <button className={styles.guestIn} onClick={guestLogin} >
             Sign in as a Guest
           </button>
         </div>

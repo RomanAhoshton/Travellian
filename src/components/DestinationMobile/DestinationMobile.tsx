@@ -9,7 +9,7 @@ import { Slider } from "../../types";
 
 const DestinationMobile = () => {
   const { handleNextClick, handlePrevClick, activeSlide, slider } =
-    useMobileSlider(destinationImages);
+    useMobileSlider(destinationImages,6);
 
   return (
     <div className={styles.carouselContainer}>
