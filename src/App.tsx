@@ -1,12 +1,13 @@
 import { memo } from "react";
-import { HashRouter as Router } from "react-router-dom";
-import AppRoutes from "./AppRoutes";
+
+
 import "./App.scss";
+import ContentPage from "./ContentPage";
 
 const App = (): JSX.Element => (
-  <Router>
-    <AppRoutes />
-  </Router>
+
+  <ContentPage/>
+
 );
 
 export default memo(App);

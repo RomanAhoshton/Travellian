@@ -14,7 +14,7 @@ const Header = () => {
     handleScrollToSection,
     handlers,
     setToggleMenu,
-    LogOut,
+
   } = useHeader();
 
   return (
@@ -52,12 +52,7 @@ const Header = () => {
               </div>
             </nav>
 
-            <button
-              className={width > 768 ? styles.logOut : styles.mobileLogout}
-              onClick={LogOut}
-            >
-              Sign out
-            </button>
+         
           </div>
         </div>
       </div>
